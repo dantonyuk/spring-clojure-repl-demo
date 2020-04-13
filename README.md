@@ -192,3 +192,14 @@ Nice! Let's test it:
 ```
 
 That's all folks!
+
+Bonus
+-----
+
+We can even shutdown the application:
+
+```clojure
+(System/exit 0)
+```
+
+;-)
