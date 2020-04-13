@@ -1,6 +1,7 @@
 package com.hylamobile.demo.web
 
 import com.hylamobile.demo.service.Counter
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -14,8 +15,8 @@ class CounterController(val counter: Counter) {
     fun getCounter(): Int = counter.value()
 
     @PostMapping
-    fun increment(): Int {
+    fun increment(): ResponseEntity<Void> {
         counter.increment()
-        return counter.value()
+        return ResponseEntity.noContent().build()
     }
 }
